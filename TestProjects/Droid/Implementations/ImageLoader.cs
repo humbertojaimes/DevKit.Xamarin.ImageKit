@@ -22,12 +22,12 @@ namespace DemoImageKit.Droid
 			var drawable =
 				(BitmapDrawable)context.Resources.GetDrawable
 					   (Resource.Drawable.ImageJPG);
-			return await drawable.Bitmap.ToByteArray(DevKit.Xamarin.ImageKit.Abstractions.ImageFormat.JPG, 100);
+			return await drawable.Bitmap.ToByteArrayAsync(DevKit.Xamarin.ImageKit.Abstractions.ImageFormat.JPG, 100);
 		}
 
 		public async Task<string[]> GetImageDetails(byte[] image)
 		{
-			Bitmap bmpImage = await image.ToBitmap();
+			Bitmap bmpImage = await image.ToBitmapAsync();
 			string[] data = new string[3]
 			{
 				bmpImage.Width.ToString(),

@@ -28,24 +28,24 @@ byte[] pngImage = await CrossImageConverter.Current.ConvertJpgToPng(sampleImage)
 ```
 ```
 //Convert Image from PNG to JPG. It can receive the quality of the result image from 0 to 100
-byte[] newJpg = await CrossImageConverter.Current.ConvertPngToJpg(png, 100);
+byte[] newJpg = await CrossImageConverter.Current.ConvertPngToJpgAsync(png, 100);
 ```
 - Resizing
 ```
 //Convert Image from PNG to JPG. It can receive the quality of the result image from 0 to 100
-byte[] newJpg = await CrossImageConverter.Current.ConvertPngToJpg(png, 100);
+byte[] newJpg = await CrossImageConverter.Current.ConvertPngToJpgAsync(png, 100);
 ```
 ```
 //Reduce de quelity of JP Image. Quality is a value from 0 to 100
-byte[] lessQualityImage = await CrossImageResizer.Current.ReduceJPGQuality(sampleImage, 50);
+byte[] lessQualityImage = await CrossImageResizer.Current.ReduceJPGQualityAsync(sampleImage, 50);
 ```
 ```
 //Resize an image with custom width and height
-byte[] reducedImage = await CrossImageResizer.Current.ResizeImage(sampleImage, 320, 320, format);
+byte[] reducedImage = await CrossImageResizer.Current.ResizeImageAsync(sampleImage, 320, 320, format);
 ```
 ```
 //Resize an image base on a percentage from the original image
-byte[] scaledImage = await CrossImageResizer.Current.ScaleImage(sampleImage, 50, format);
+byte[] scaledImage = await CrossImageResizer.Current.ScaleImageAsync(sampleImage, 50, format);
 ```
 
 ### Extension methods for platforms
@@ -55,12 +55,12 @@ These are the method(s) per platform in DevKit.Xamarin.ImageKit dll
 
 - Droid (namespace DevKit.Xamarin.ImageKit.Droid.Utils)
   - ToBitmap() returns a Bitmap from byte[]  
-  - ToByteArray(Abstractions.ImageFormat, int quality) returns a byte[] from a Bitmap instace
+  - ToByteArrayAsync(Abstractions.ImageFormat, int quality) returns a byte[] from a Bitmap instace
 - iOS (namespace DevKit.Xamarin.ImageKit.iOS.Utils)
-  - ToImage() returns a UIImage from byte[]
+  - ToImageAsync() returns a UIImage from byte[]
 - UWP (namespace DevKit.Xamarin.ImageKit.UWP.Utils)
-  - ToBitmapImage() returns a WriteableBitmap from byte[]
-  - ToByteArray(Abstractions.ImageFormat, int quality) returns a byte[] from a WriteableBitmap instace 
+  - ToBitmapImageAsync() returns a WriteableBitmap from byte[]
+  - ToByteArrayAsync(Abstractions.ImageFormat, int quality) returns a byte[] from a WriteableBitmap instace 
 
 Feel free to contribute, improve or use this code for your projects.
 

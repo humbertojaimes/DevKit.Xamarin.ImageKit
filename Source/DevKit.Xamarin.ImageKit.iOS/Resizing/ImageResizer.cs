@@ -14,11 +14,11 @@ namespace DevKit.Xamarin.ImageKit
         /// <returns>The low quality image.</returns>
         /// <param name="originalImage">Original image.</param>
         /// <param name="newQuality">New quality from 1 to 100.</param>
-        public async Task<byte[]> ReduceJPGQuality(byte[] originalImage, int newQuality)
+        public async Task<byte[]> ReduceJPGQualityAsync(byte[] originalImage, int newQuality)
         {
             if (newQuality > 100 || newQuality < 1)
                 throw new Exception("Invalid quality value");
-            UIImage uiImage = await originalImage.ToImage();
+            UIImage uiImage = await originalImage.ToImageAsync();
             nfloat fNewQuality = newQuality / 100;
             return uiImage.AsJPEG(fNewQuality).ToArray();
         }
@@ -31,10 +31,10 @@ namespace DevKit.Xamarin.ImageKit
         /// <param name="newHeight">New height.</param>
         /// <param name="newWidth">New width.</param>
         /// <param name="imageFormat">Image format Jpg or Png.</param>
-        public async Task<byte[]> ResizeImage(byte[] originalImage, int newHeight, int newWidth, ImageFormat imageFormat)
+        public async Task<byte[]> ResizeImageAsync(byte[] originalImage, int newHeight, int newWidth, ImageFormat imageFormat)
         {
             byte[] resulImage = null;
-            UIKit.UIImage uiImage = await originalImage.ToImage();
+            UIKit.UIImage uiImage = await originalImage.ToImageAsync();
             UIGraphics.BeginImageContext(new CoreGraphics.CGSize(newWidth, newHeight));
             uiImage.Draw(new CoreGraphics.CGRect(0, 0, newWidth, newHeight));
             UIImage resultUIImage = UIGraphics.GetImageFromCurrentImageContext();
@@ -54,14 +54,14 @@ namespace DevKit.Xamarin.ImageKit
         /// <param name="originalImage">Original image.</param>
         /// <param name="finalImagePercentage">Final image percentage.</param>
         /// <param name="imageFormat">Image format Jpg or Png.</param>
-        public async Task<byte[]> ScaleImage(byte[] originalImage, double finalImagePercentage, ImageFormat imageFormat)
+        public async Task<byte[]> ScaleImageAsync(byte[] originalImage, double finalImagePercentage, ImageFormat imageFormat)
         {
-            UIKit.UIImage uiImage = await originalImage.ToImage();
+            UIKit.UIImage uiImage = await originalImage.ToImageAsync();
             nfloat width = uiImage.Size.Width;
             nfloat height = uiImage.Size.Height;
             int scaleWidth = Convert.ToInt16(width * (finalImagePercentage * .01));
             int scaleHeight = Convert.ToInt16(height * (finalImagePercentage * .01));
-            return await ResizeImage(originalImage, scaleHeight, scaleWidth, imageFormat);
+            return await ResizeImageAsync(originalImage, scaleHeight, scaleWidth, imageFormat);
         }
     }
 }

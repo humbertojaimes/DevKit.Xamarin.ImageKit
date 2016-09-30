@@ -14,13 +14,13 @@ namespace DevKit.Xamarin.ImageKit
         /// <returns>The low quality image.</returns>
         /// <param name="originalImage">Original image.</param>
         /// <param name="newQuality">New quality from 1 to 100.</param>
-        public async Task<byte[]> ReduceJPGQuality(byte[] originalImage, int newQuality)
+        public async Task<byte[]> ReduceJPGQualityAsync(byte[] originalImage, int newQuality)
         {
             if (newQuality > 100 || newQuality < 1)
                 throw new Exception("Invalid quality value");
 
-            Bitmap bitmap = await originalImage.ToBitmap();
-            return await bitmap.ToByteArray(Abstractions.ImageFormat.JPG, newQuality);
+            Bitmap bitmap = await originalImage.ToBitmapAsync();
+            return await bitmap.ToByteArrayAsync(Abstractions.ImageFormat.JPG, newQuality);
         }
 
         /// <summary>
@@ -31,12 +31,12 @@ namespace DevKit.Xamarin.ImageKit
         /// <param name="newHeight">New height.</param>
         /// <param name="newWidth">New width.</param>
         /// <param name="imageFormat">Image format Jpg or Png.</param>
-        public async Task<byte[]> ResizeImage(byte[] originalImage, int newHeight, int newWidth, Abstractions.ImageFormat imageFormat)
+        public async Task<byte[]> ResizeImageAsync(byte[] originalImage, int newHeight, int newWidth, Abstractions.ImageFormat imageFormat)
         {
             byte[] resultScaledImage = null;
-            Bitmap bitmap = await originalImage.ToBitmap();
+            Bitmap bitmap = await originalImage.ToBitmapAsync();
             Bitmap scaledBitmap = Bitmap.CreateScaledBitmap(bitmap, newWidth, newHeight, false);
-            resultScaledImage = await scaledBitmap.ToByteArray(imageFormat);
+            resultScaledImage = await scaledBitmap.ToByteArrayAsync(imageFormat);
             return resultScaledImage;
         }
 
@@ -47,14 +47,14 @@ namespace DevKit.Xamarin.ImageKit
         /// <param name="originalImage">Original image.</param>
         /// <param name="finalImagePercentage">Final image percentage.</param>
         /// <param name="imageFormat">Image format Jpg or Png.</param>
-        public async Task<byte[]> ScaleImage(byte[] originalImage, double finalImagePercentage, Abstractions.ImageFormat imageFormat)
+        public async Task<byte[]> ScaleImageAsync(byte[] originalImage, double finalImagePercentage, Abstractions.ImageFormat imageFormat)
         {
-            Bitmap bitmap = await originalImage.ToBitmap();
+            Bitmap bitmap = await originalImage.ToBitmapAsync();
             int width = bitmap.Width;
             int height = bitmap.Height;
             int scaleWidth = Convert.ToInt16(width * (finalImagePercentage * .01));
             int scaleHeight = Convert.ToInt16(height * (finalImagePercentage * .01));
-            return await ResizeImage(originalImage, scaleHeight, scaleWidth, imageFormat);
+            return await ResizeImageAsync(originalImage, scaleHeight, scaleWidth, imageFormat);
         }
     }
 }

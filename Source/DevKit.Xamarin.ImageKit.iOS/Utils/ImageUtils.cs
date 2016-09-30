@@ -5,7 +5,7 @@ namespace DevKit.Xamarin.ImageKit.iOS.Utils
 {
     public static class ImageUtils
     {
-        public static async Task<UIImage> ToImage(this byte[] data)
+        public static async Task<UIImage> ToImageAsync(this byte[] data)
         {
             UIKit.UIImage image;
             try

@@ -23,12 +23,12 @@ namespace DemoImageKit.UWP.Implementations
                 await bitmapImage.SetSourceAsync(stream);
             }
 
-            return await bitmapImage.ToByteArray(DevKit.Xamarin.ImageKit.Abstractions.ImageFormat.JPG, 100);
+            return await bitmapImage.ToByteArrayAsync(DevKit.Xamarin.ImageKit.Abstractions.ImageFormat.JPG, 100);
         }
 
         public async Task<string[]> GetImageDetails(byte[] image)
         {
-            WriteableBitmap bitmapImage = await image.ToBitmapImage();
+            WriteableBitmap bitmapImage = await image.ToBitmapImageAsync();
             string[] data = new string[3]
             {
                 bitmapImage.PixelWidth.ToString(),

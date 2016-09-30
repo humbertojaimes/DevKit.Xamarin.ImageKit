@@ -7,17 +7,17 @@ namespace DevKit.Xamarin.ImageKit
 {
     internal class ImageConverter : IImageConverter
     {
-        public async Task<byte[]> ConvertJpgToPng(byte[] image)
+        public async Task<byte[]> ConvertJpgToPngAsync(byte[] image)
         {
-            WriteableBitmap bitmapImage = await image.ToBitmapImage();
-            return await bitmapImage.ToByteArray(ImageFormat.PNG);
+            WriteableBitmap bitmapImage = await image.ToBitmapImageAsync();
+            return await bitmapImage.ToByteArrayAsync(ImageFormat.PNG);
         }
 
-        public async Task<byte[]> ConvertPngToJpg(byte[] image, int quality)
+        public async Task<byte[]> ConvertPngToJpgAsync(byte[] image, int quality)
         {
-            WriteableBitmap bitmapImage = await image.ToBitmapImage();
+            WriteableBitmap bitmapImage = await image.ToBitmapImageAsync();
 
-            return await bitmapImage.ToByteArray(ImageFormat.JPG);
+            return await bitmapImage.ToByteArrayAsync(ImageFormat.JPG);
         }
     }
 }

@@ -27,7 +27,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
-    <OutputPath>..\..\libs\DevKit.Xamarin.ImageKit.iOS\Release\</OutputPath>
+    <OutputPath>..\..\libs\DevKit.Xamarin.ImageKit.iOS\</OutputPath>
     <DefineConstants>
     </DefineConstants>
     <ErrorReport>prompt</ErrorReport>

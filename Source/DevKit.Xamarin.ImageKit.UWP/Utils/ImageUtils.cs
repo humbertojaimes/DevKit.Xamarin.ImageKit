@@ -10,7 +10,7 @@ namespace DevKit.Xamarin.ImageKit.UWP.Utils
 {
     public static class ImageUtils
     {
-        public async static Task<WriteableBitmap> ToBitmapImage(this byte[] image)
+        public async static Task<WriteableBitmap> ToBitmapImageAsync(this byte[] image)
         {
             WriteableBitmap resultBitmap = new WriteableBitmap(1, 1);
             using (IRandomAccessStream ms = new InMemoryRandomAccessStream())
@@ -22,7 +22,7 @@ namespace DevKit.Xamarin.ImageKit.UWP.Utils
             return resultBitmap;
         }
 
-        public async static Task<byte[]> ToByteArray(this WriteableBitmap image, Abstractions.ImageFormat format, int quality = 100)
+        public async static Task<byte[]> ToByteArrayAsync(this WriteableBitmap image, Abstractions.ImageFormat format, int quality = 100)
         {
             byte[] resultArray = null;
             WriteableBitmap writeableBitmap = image;

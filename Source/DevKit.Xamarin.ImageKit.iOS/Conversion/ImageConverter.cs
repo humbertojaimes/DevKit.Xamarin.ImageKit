@@ -13,9 +13,9 @@ namespace DevKit.Xamarin.ImageKit
         /// </summary>
         /// <returns>The png image.</returns>
         /// <param name="image">The original image.</param>
-        public async Task<byte[]> ConvertJpgToPng(byte[] image)
+        public async Task<byte[]> ConvertJpgToPngAsync(byte[] image)
         {
-            UIImage uiImage = await image.ToImage();
+            UIImage uiImage = await image.ToImageAsync();
             return uiImage.AsPNG().ToArray();
         }
 
@@ -24,9 +24,9 @@ namespace DevKit.Xamarin.ImageKit
         /// </summary>
         /// <returns>The jpg image.</returns>
         /// <param name="image">The original image.</param>
-        public async Task<byte[]> ConvertPngToJpg(byte[] image, int quality)
+        public async Task<byte[]> ConvertPngToJpgAsync(byte[] image, int quality)
         {
-            UIImage uiImage = await image.ToImage();
+            UIImage uiImage = await image.ToImageAsync();
             nfloat fQuality = quality / 100;
             return uiImage.AsJPEG(fQuality).ToArray();
         }

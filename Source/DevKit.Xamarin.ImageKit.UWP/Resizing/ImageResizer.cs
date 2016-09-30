@@ -12,16 +12,16 @@ namespace DevKit.Xamarin.ImageKit
 {
     public class ImageResizer : IImageResizer
     {
-        public async Task<byte[]> ReduceJPGQuality(byte[] originalImage, int newQuality)
+        public async Task<byte[]> ReduceJPGQualityAsync(byte[] originalImage, int newQuality)
         {
-            WriteableBitmap bitmapImage = await originalImage.ToBitmapImage();
-            return await bitmapImage.ToByteArray(ImageFormat.JPG, newQuality);
+            WriteableBitmap bitmapImage = await originalImage.ToBitmapImageAsync();
+            return await bitmapImage.ToByteArrayAsync(ImageFormat.JPG, newQuality);
         }
 
-        public async Task<byte[]> ResizeImage(byte[] originalImage, int newHeight, int newWidth, ImageFormat imageFormat)
+        public async Task<byte[]> ResizeImageAsync(byte[] originalImage, int newHeight, int newWidth, ImageFormat imageFormat)
         {
             byte[] resultImage = null;
-            WriteableBitmap bitmapImage = await originalImage.ToBitmapImage();
+            WriteableBitmap bitmapImage = await originalImage.ToBitmapImageAsync();
 
             MemoryStream memoryStream = new MemoryStream(originalImage);
 
@@ -42,13 +42,13 @@ namespace DevKit.Xamarin.ImageKit
             return resultImage;
         }
 
-        public async Task<byte[]> ScaleImage(byte[] originalImage, double finalImagePercentage, ImageFormat imageFormat)
+        public async Task<byte[]> ScaleImageAsync(byte[] originalImage, double finalImagePercentage, ImageFormat imageFormat)
         {
-            WriteableBitmap bitmapImage = await originalImage.ToBitmapImage();
+            WriteableBitmap bitmapImage = await originalImage.ToBitmapImageAsync();
             int scaleWidth = Convert.ToInt16(bitmapImage.PixelWidth * (finalImagePercentage * .01));
             int scaleHeight = Convert.ToInt16(bitmapImage.PixelHeight * (finalImagePercentage * .01));
 
-            return await ResizeImage(originalImage, scaleHeight, scaleWidth, imageFormat);
+            return await ResizeImageAsync(originalImage, scaleHeight, scaleWidth, imageFormat);
         }
     }
 }

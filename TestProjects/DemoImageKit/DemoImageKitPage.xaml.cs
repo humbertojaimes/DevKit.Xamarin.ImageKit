@@ -65,28 +65,28 @@ namespace DemoImageKit
                 switch ((ImagePluginFunctions)Enum.Parse(typeof(ImagePluginFunctions), pkrMethods.Items.ElementAt(pkrMethods.SelectedIndex)))
                 {
                     case ImagePluginFunctions.ConvertFromJpgToPng:
-                        byte[] pngImage = await CrossImageConverter.Current.ConvertJpgToPng(sampleImage);
+                        byte[] pngImage = await CrossImageConverter.Current.ConvertJpgToPngAsync(sampleImage);
                         loadImageOnPage(pngImage);
                         break;
 
                     case ImagePluginFunctions.ConvertFromPngToJpg:
-                        byte[] png = await CrossImageConverter.Current.ConvertJpgToPng(sampleImage);
-                        byte[] newJpg = await CrossImageConverter.Current.ConvertPngToJpg(png, 100);
+                        byte[] png = await CrossImageConverter.Current.ConvertJpgToPngAsync(sampleImage);
+                        byte[] newJpg = await CrossImageConverter.Current.ConvertPngToJpgAsync(png, 100);
                         loadImageOnPage(newJpg);
                         break;
 
                     case ImagePluginFunctions.ReduceJpgQuality:
-                        byte[] lessQualityImage = await CrossImageResizer.Current.ReduceJPGQuality(sampleImage, 50);
+                        byte[] lessQualityImage = await CrossImageResizer.Current.ReduceJPGQualityAsync(sampleImage, 50);
                         loadImageOnPage(lessQualityImage);
                         break;
 
                     case ImagePluginFunctions.Resize:
-                        byte[] reducedImage = await CrossImageResizer.Current.ResizeImage(sampleImage, 320, 320, format);
+                        byte[] reducedImage = await CrossImageResizer.Current.ResizeImageAsync(sampleImage, 320, 320, format);
                         loadImageOnPage(reducedImage);
                         break;
 
                     case ImagePluginFunctions.Scale:
-                        byte[] scaledImage = await CrossImageResizer.Current.ScaleImage(sampleImage, 50, format);
+                        byte[] scaledImage = await CrossImageResizer.Current.ScaleImageAsync(sampleImage, 50, format);
                         loadImageOnPage(scaledImage);
                         break;
                 }

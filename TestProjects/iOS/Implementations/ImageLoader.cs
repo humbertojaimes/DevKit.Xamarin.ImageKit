@@ -17,7 +17,7 @@ namespace DemoImageKit.iOS
 
         public async Task<string[]> GetImageDetails(byte[] image)
         {
-            UIKit.UIImage uiImage = await image.ToImage();
+            UIKit.UIImage uiImage = await image.ToImageAsync();
             string[] data = new string[3]
             {
                 uiImage.Size.Width.ToString(),
