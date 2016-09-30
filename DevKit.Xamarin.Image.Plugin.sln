@@ -25,56 +25,27 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoImageKit.iOS", "TestProjects\iOS\DemoImageKit.iOS.csproj", "{85119040-77A5-4968-8701-BF5660632979}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevKit.Xamarin.ImageKit", "DevKit.Xamarin.ImageKit", "{F715F88F-D027-4D61-9D28-A5A5099927C1}"
+	ProjectSection(SolutionItems) = preProject
+		libs\DevKit.Xamarin.ImageKit\DevKit.Xamarin.ImageKit.Abstractions.dll = libs\DevKit.Xamarin.ImageKit\DevKit.Xamarin.ImageKit.Abstractions.dll
+		libs\DevKit.Xamarin.ImageKit\DevKit.Xamarin.ImageKit.dll = libs\DevKit.Xamarin.ImageKit\DevKit.Xamarin.ImageKit.dll
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevKit.Xamarin.ImageKit.iOS", "DevKit.Xamarin.ImageKit.iOS", "{17DF68BE-2783-4CBC-9BF2-3EAE7805DB2D}"
+	ProjectSection(SolutionItems) = preProject
+		libs\DevKit.Xamarin.ImageKit.iOS\DevKit.Xamarin.ImageKit.dll = libs\DevKit.Xamarin.ImageKit.iOS\DevKit.Xamarin.ImageKit.dll
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevKit.Xamarin.ImageKit.Droid", "DevKit.Xamarin.ImageKit.Droid", "{ABD0301D-3AA1-4DA9-A3E5-1D817CA63498}"
+	ProjectSection(SolutionItems) = preProject
+		libs\DevKit.Xamarin.ImageKit.Droid\DevKit.Xamarin.ImageKit.dll = libs\DevKit.Xamarin.ImageKit.Droid\DevKit.Xamarin.ImageKit.dll
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevKit.Xamarin.ImageKit.UWP", "DevKit.Xamarin.ImageKit.UWP", "{2A9FC43B-79F9-460D-8021-F40F03D74A1A}"
+	ProjectSection(SolutionItems) = preProject
+		libs\DevKit.Xamarin.ImageKit.UWP\DevKit.Xamarin.ImageKit.dll = libs\DevKit.Xamarin.ImageKit.UWP\DevKit.Xamarin.ImageKit.dll
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevKit.Xamarin.ImageKIt", "Source\DevKit.Xamarin.Image\DevKit.Xamarin.ImageKIt.csproj", "{EE75BCD5-92F5-4C6E-8249-E959A7E8A3FA}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{B12B7711-FCDF-4BC0-A09B-B11595607E94}"
-	ProjectSection(SolutionItems) = preProject
-		libs\DevKit.Xamarin.ImageKit\Debug\DevKit.Xamarin.ImageKit.Abstractions.dll = libs\DevKit.Xamarin.ImageKit\Debug\DevKit.Xamarin.ImageKit.Abstractions.dll
-		libs\DevKit.Xamarin.ImageKit\Debug\DevKit.Xamarin.ImageKit.dll = libs\DevKit.Xamarin.ImageKit\Debug\DevKit.Xamarin.ImageKit.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{2CE74AED-12AF-42DD-A073-E582918E1ECC}"
-	ProjectSection(SolutionItems) = preProject
-		libs\DevKit.Xamarin.ImageKit\Release\DevKit.Xamarin.ImageKit.Abstractions.dll = libs\DevKit.Xamarin.ImageKit\Release\DevKit.Xamarin.ImageKit.Abstractions.dll
-		libs\DevKit.Xamarin.ImageKit\Release\DevKit.Xamarin.ImageKit.dll = libs\DevKit.Xamarin.ImageKit\Release\DevKit.Xamarin.ImageKit.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{8B145BCC-81B6-47BE-BA33-CAD87B630348}"
-	ProjectSection(SolutionItems) = preProject
-		libs\DevKit.Xamarin.ImageKit.Droid\Debug\DevKit.Xamarin.ImageKit.dll = libs\DevKit.Xamarin.ImageKit.Droid\Debug\DevKit.Xamarin.ImageKit.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{8855C211-3652-446A-8242-113DEB771A76}"
-	ProjectSection(SolutionItems) = preProject
-		libs\DevKit.Xamarin.ImageKit.Droid\Release\DevKit.Xamarin.ImageKit.dll = libs\DevKit.Xamarin.ImageKit.Droid\Release\DevKit.Xamarin.ImageKit.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{7699191F-C47D-4C7D-A245-6F171EC8D0EB}"
-	ProjectSection(SolutionItems) = preProject
-		libs\DevKit.Xamarin.ImageKit.iOS\Debug\DevKit.Xamarin.ImageKit.dll = libs\DevKit.Xamarin.ImageKit.iOS\Debug\DevKit.Xamarin.ImageKit.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{4CE2ED94-7DD4-4933-B130-D8A4308B5F58}"
-	ProjectSection(SolutionItems) = preProject
-		libs\DevKit.Xamarin.ImageKit.iOS\Release\DevKit.Xamarin.ImageKit.dll = libs\DevKit.Xamarin.ImageKit.iOS\Release\DevKit.Xamarin.ImageKit.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{64084C53-B0A8-46C1-8378-CA162B021CAF}"
-	ProjectSection(SolutionItems) = preProject
-		libs\DevKit.Xamarin.ImageKit.UWP\Debug\DevKit.Xamarin.ImageKit.dll = libs\DevKit.Xamarin.ImageKit.UWP\Debug\DevKit.Xamarin.ImageKit.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{2CD7486D-05C1-41DD-87FD-FBD2CF763A03}"
-	ProjectSection(SolutionItems) = preProject
-		libs\DevKit.Xamarin.ImageKit.UWP\Release\DevKit.Xamarin.ImageKit.dll = libs\DevKit.Xamarin.ImageKit.UWP\Release\DevKit.Xamarin.ImageKit.dll
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2D306E19-5C47-4FAC-B962-39792E2EC545}"
 	ProjectSection(SolutionItems) = preProject
@@ -217,13 +188,5 @@ Global
 		{ABD0301D-3AA1-4DA9-A3E5-1D817CA63498} = {815B044E-E2F3-4FF7-8F8E-F8013D7E5E80}
 		{2A9FC43B-79F9-460D-8021-F40F03D74A1A} = {815B044E-E2F3-4FF7-8F8E-F8013D7E5E80}
 		{EE75BCD5-92F5-4C6E-8249-E959A7E8A3FA} = {F4F00987-6164-4A25-A2E6-F94481ADB327}
-		{B12B7711-FCDF-4BC0-A09B-B11595607E94} = {F715F88F-D027-4D61-9D28-A5A5099927C1}
-		{2CE74AED-12AF-42DD-A073-E582918E1ECC} = {F715F88F-D027-4D61-9D28-A5A5099927C1}
-		{8B145BCC-81B6-47BE-BA33-CAD87B630348} = {ABD0301D-3AA1-4DA9-A3E5-1D817CA63498}
-		{8855C211-3652-446A-8242-113DEB771A76} = {ABD0301D-3AA1-4DA9-A3E5-1D817CA63498}
-		{7699191F-C47D-4C7D-A245-6F171EC8D0EB} = {17DF68BE-2783-4CBC-9BF2-3EAE7805DB2D}
-		{4CE2ED94-7DD4-4933-B130-D8A4308B5F58} = {17DF68BE-2783-4CBC-9BF2-3EAE7805DB2D}
-		{64084C53-B0A8-46C1-8378-CA162B021CAF} = {2A9FC43B-79F9-460D-8021-F40F03D74A1A}
-		{2CD7486D-05C1-41DD-87FD-FBD2CF763A03} = {2A9FC43B-79F9-460D-8021-F40F03D74A1A}
 	EndGlobalSection
 EndGlobal
