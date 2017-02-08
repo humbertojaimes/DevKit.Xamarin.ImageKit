@@ -1,6 +1,6 @@
 # DevKit.Xamarin.ImageKit
 
-The ImageKit for Xamarin contains basic functionality to rezize images and convert images betwen JPG and PNG formats in Xamarin.Android, Xamarin.iOS, UWP and Xamarin.Forms.
+The ImageKit for Xamarin contains basic functionality to resize images and convert images betwen JPG and PNG formats in Xamarin.Android, Xamarin.iOS, UWP and Xamarin.Forms.
 
 ### Usage
 - Xamarin.Forms Portable Class Library:
