@@ -48,6 +48,20 @@ byte[] reducedImage = await CrossImageResizer.Current.ResizeImageAsync(sampleIma
 byte[] scaledImage = await CrossImageResizer.Current.ScaleImageAsync(sampleImage, 50, format);
 ```
 
+- Manipulation
+```
+//Rotate an image 90 degrees to it's rigth or left side
+byte[] leftRotatedImage = await CrossImageManipulation.Current.RotateImageAsync(sampleImage, SideOrientation.RotateToLeft, format);
+```
+
+- Image Details
+```
+//Returns the width and heigth of the image 
+var imageInformation = await CrossImageData.Current.GetImageDetails(image);
+            lbWidth.Text = "Width " + imageInformation.Width;
+            lbHeight.Text = "Heigth " + imageInformation.Heigth;
+```
+
 ### Extension methods for platforms
 I created some extension methods to facilitate conversion from image native classes to byte[] and vice versa.
 

@@ -19,9 +19,11 @@ namespace DemoImageKit.Droid
 		public async Task<byte[]> GetImage()
 		{
 			var context = Xamarin.Forms.Forms.Context;
-			var drawable =
-				(BitmapDrawable)context.Resources.GetDrawable
-					   (Resource.Drawable.ImageJPG);
+
+            BitmapFactory.Options options = new BitmapFactory.Options();
+
+            options.InScaled = false;
+            var drawable = new BitmapDrawable(BitmapFactory.DecodeResource(Android.App.Application.Context.Resources,Resource.Drawable.ImageJPG,options));
 			return await drawable.Bitmap.ToByteArrayAsync(DevKit.Xamarin.ImageKit.Abstractions.ImageFormat.JPG, 100);
 		}
 

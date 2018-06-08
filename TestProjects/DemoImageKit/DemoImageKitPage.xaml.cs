@@ -1,4 +1,5 @@
 ﻿using DemoImageKit.Interfaces;
+using DevKit.Xamarin.Image.Manipulation;
 using DevKit.Xamarin.ImageKit;
 using DevKit.Xamarin.ImageKit.Abstractions;
 using System;
@@ -16,6 +17,8 @@ namespace DemoImageKit
         ReduceJpgQuality,
         ConvertFromJpgToPng,
         ConvertFromPngToJpg,
+        RotateLeft,
+        RotateRigth
     }
 
     public partial class DemoImageKitPage : ContentPage
@@ -35,7 +38,9 @@ namespace DemoImageKit
                 ImagePluginFunctions.ConvertFromPngToJpg.ToString(),
                 ImagePluginFunctions.ReduceJpgQuality.ToString(),
                 ImagePluginFunctions.Resize.ToString(),
-                ImagePluginFunctions.Scale.ToString()
+                ImagePluginFunctions.Scale.ToString(),
+                ImagePluginFunctions.RotateLeft.ToString(),
+                ImagePluginFunctions.RotateRigth.ToString()
             };
 
             imagePluginFunctions.All((arg) => { pkrMethods.Items.Add(arg); return true; });
@@ -52,10 +57,10 @@ namespace DemoImageKit
         {
             ImageSource imageSource = ImageSource.FromStream(() => { return new MemoryStream(image); });
             imDisplay.Source = imageSource;
-            string[] imageInformation = await imageLoader.GetImageDetails(image);
-            lbWidth.Text = "Width " + imageInformation[0];
-            lbHeight.Text = "Heigth " + imageInformation[1];
-            lbArrayLength.Text = "Array Length " + imageInformation[2];
+            var imageInformation = await CrossImageData.Current.GetImageDetails(image);
+            lbWidth.Text = "Width " + imageInformation.Width;
+            lbHeight.Text = "Heigth " + imageInformation.Heigth;
+            lbArrayLength.Text = "Array Length " + image.Length;
         }
 
         private async void Handle_Clicked(object sender, System.EventArgs e)
@@ -88,6 +93,14 @@ namespace DemoImageKit
                     case ImagePluginFunctions.Scale:
                         byte[] scaledImage = await CrossImageResizer.Current.ScaleImageAsync(sampleImage, 50, format);
                         loadImageOnPage(scaledImage);
+                        break;
+                    case ImagePluginFunctions.RotateLeft:
+                        byte[] leftRotatedImage = await CrossImageManipulation.Current.RotateImageAsync(sampleImage, SideOrientation.RotateToLeft, format);
+                        loadImageOnPage(leftRotatedImage);
+                        break;
+                    case ImagePluginFunctions.RotateRigth:
+                        byte[] rigthRotatedImage = await CrossImageManipulation.Current.RotateImageAsync(sampleImage, SideOrientation.RotateToRigth, format);
+                        loadImageOnPage(rigthRotatedImage);
                         break;
                 }
         }

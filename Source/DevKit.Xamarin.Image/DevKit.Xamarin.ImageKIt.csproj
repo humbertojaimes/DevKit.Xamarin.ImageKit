@@ -34,7 +34,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Conversion\CrossImageConverter.cs" />
+    <Compile Include="ImageData\CrossImageData.cs" />
     <Compile Include="Resizing\CrossImageResizer.cs" />
+    <Compile Include="Manipulation\CrossImageManipulation.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -42,6 +44,11 @@
       <Project>{78B3558B-FE53-42BB-B92A-DE7EB6BF0A8B}</Project>
       <Name>DevKit.Xamarin.ImageKit.Abstractions</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ImageData\" />
+    <Folder Include="Resizing\" />
+    <Folder Include="Manipulation\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

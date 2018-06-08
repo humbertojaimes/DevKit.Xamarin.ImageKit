@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>DevKit.Xamarin.ImageKit.Droid</RootNamespace>
     <AssemblyName>DevKit.Xamarin.ImageKit</AssemblyName>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
@@ -25,7 +25,6 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <AndroidLinkMode>None</AndroidLinkMode>
-    <AndroidSupportedAbis>arm64-v8a;armeabi;armeabi-v7a;x86</AndroidSupportedAbis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -53,6 +52,14 @@
     </Compile>
     <Compile Include="Resizing\ImageResizer.cs" />
     <Compile Include="Utils\ImageUtils.cs" />
+    <Compile Include="ImageData\ImageData.cs" />
+    <Compile Include="..\DevKit.Xamarin.Image\ImageData\CrossImageData.cs">
+      <Link>ImageData\CrossImageData.cs</Link>
+    </Compile>
+    <Compile Include="..\DevKit.Xamarin.Image\Manipulation\CrossImageManipulation.cs">
+      <Link>Manipulation\CrossImageManipulation.cs</Link>
+    </Compile>
+    <Compile Include="Manipulation\ImageManipulator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -66,6 +73,10 @@
       <Project>{78B3558B-FE53-42BB-B92A-DE7EB6BF0A8B}</Project>
       <Name>DevKit.Xamarin.ImageKit.Abstractions</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ImageData\" />
+    <Folder Include="Manipulation\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

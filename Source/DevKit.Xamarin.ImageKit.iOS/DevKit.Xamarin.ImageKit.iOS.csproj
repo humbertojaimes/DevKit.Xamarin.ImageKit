@@ -19,8 +19,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
@@ -33,8 +31,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
@@ -47,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="ImageData\" />
+    <Folder Include="Manipulation\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,6 +57,14 @@
     <Compile Include="Resizing\ImageResizer.cs" />
     <Compile Include="Utils\ImageUtils.cs" />
     <Compile Include="Conversion\ImageConverter.cs" />
+    <Compile Include="ImageData\ImageData.cs" />
+    <Compile Include="..\DevKit.Xamarin.Image\ImageData\CrossImageData.cs">
+      <Link>ImageData\CrossImageData.cs</Link>
+    </Compile>
+    <Compile Include="..\DevKit.Xamarin.Image\Manipulation\CrossImageManipulation.cs">
+      <Link>Manipulation\CrossImageManipulation.cs</Link>
+    </Compile>
+    <Compile Include="Manipulation\ImageManipulator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DevKit.Xamarin.ImageKit\DevKit.Xamarin.ImageKit.Abstractions.csproj">

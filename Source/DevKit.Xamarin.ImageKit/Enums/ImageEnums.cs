@@ -5,4 +5,11 @@
         JPG,
         PNG
     }
+
+    public enum SideOrientation
+    {
+        RotateToRigth,
+        RotateToLeft
+    }
+
 }

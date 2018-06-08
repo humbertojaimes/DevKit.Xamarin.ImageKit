@@ -35,7 +35,14 @@
     <Compile Include="Resizing\IImageResizer.cs" />
     <Compile Include="Conversion\IImageConverter.cs" />
     <Compile Include="Enums\ImageEnums.cs" />
+    <Compile Include="ImageData\IImageData.cs" />
+    <Compile Include="ImageData\ImageDataResult.cs" />
+    <Compile Include="Manipulation\IImageManipulator.cs" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ImageData\" />
+    <Folder Include="Manipulation\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>
