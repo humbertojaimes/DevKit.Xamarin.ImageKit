@@ -4,17 +4,17 @@ using DevKit.Xamarin.ImageKit.iOS.Utils;
 
 namespace DevKit.Xamarin.ImageKit
 {
-    public class ImageData: IImageData
+    public class ImageData : IImageData
     {
-        public async Task<ImageDataResult> GetImageDetails(byte[] image)
+        public ImageDataResult GetImageDetails(byte[] image)
         {
-			UIKit.UIImage uiImage = await image.ToImageAsync();
+            UIKit.UIImage uiImage = image.ToImage();
             ImageDataResult data = new ImageDataResult
-			{
+            {
                 Width = (int)uiImage.Size.Width,
                 Heigth = (int)uiImage.Size.Height
-			};
-			return data;
+            };
+            return data;
         }
     }
 }

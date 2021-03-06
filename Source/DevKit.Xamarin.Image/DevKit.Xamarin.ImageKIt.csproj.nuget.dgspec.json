@@ -1,0 +1,63 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/Github/DevKit.Xamarin.ImageKit/Source/DevKit.Xamarin.Image/DevKit.Xamarin.ImageKIt.csproj": {}
+  },
+  "projects": {
+    "/Users/Github/DevKit.Xamarin.ImageKit/Source/DevKit.Xamarin.Image/DevKit.Xamarin.ImageKIt.csproj": {
+      "restore": {
+        "projectUniqueName": "/Users/Github/DevKit.Xamarin.ImageKit/Source/DevKit.Xamarin.Image/DevKit.Xamarin.ImageKIt.csproj",
+        "projectName": "DevKit.Xamarin.ImageKIt",
+        "projectPath": "/Users/Github/DevKit.Xamarin.ImageKit/Source/DevKit.Xamarin.Image/DevKit.Xamarin.ImageKIt.csproj",
+        "projectJsonPath": "/Users/Github/DevKit.Xamarin.ImageKit/Source/DevKit.Xamarin.Image/project.json",
+        "packagesPath": "/Users/hjr/.nuget/packages/",
+        "projectStyle": "ProjectJson",
+        "configFilePaths": [
+          "/Users/hjr/.config/NuGet/NuGet.Config"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard1.0": {
+            "projectReferences": {
+              "/Users/Github/DevKit.Xamarin.ImageKit/Source/DevKit.Xamarin.ImageKit/DevKit.Xamarin.ImageKit.Abstractions.csproj": {
+                "projectPath": "/Users/Github/DevKit.Xamarin.ImageKit/Source/DevKit.Xamarin.ImageKit/DevKit.Xamarin.ImageKit.Abstractions.csproj"
+              }
+            }
+          }
+        }
+      },
+      "dependencies": {
+        "Microsoft.NETCore.Portable.Compatibility": "[1.0.1, )",
+        "NETStandard.Library": "[1.6.0, )"
+      },
+      "frameworks": {
+        "netstandard1.0": {}
+      }
+    },
+    "/Users/Github/DevKit.Xamarin.ImageKit/Source/DevKit.Xamarin.ImageKit/DevKit.Xamarin.ImageKit.Abstractions.csproj": {
+      "restore": {
+        "projectUniqueName": "/Users/Github/DevKit.Xamarin.ImageKit/Source/DevKit.Xamarin.ImageKit/DevKit.Xamarin.ImageKit.Abstractions.csproj",
+        "projectName": "DevKit.Xamarin.ImageKit.Abstractions",
+        "projectPath": "/Users/Github/DevKit.Xamarin.ImageKit/Source/DevKit.Xamarin.ImageKit/DevKit.Xamarin.ImageKit.Abstractions.csproj",
+        "projectJsonPath": "/Users/Github/DevKit.Xamarin.ImageKit/Source/DevKit.Xamarin.ImageKit/project.json",
+        "packagesPath": "/Users/hjr/.nuget/packages/",
+        "projectStyle": "ProjectJson",
+        "configFilePaths": [
+          "/Users/hjr/.config/NuGet/NuGet.Config"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        }
+      },
+      "dependencies": {
+        "Microsoft.NETCore.Portable.Compatibility": "[1.0.1, )",
+        "NETStandard.Library": "[1.6.0, )"
+      },
+      "frameworks": {
+        "netstandard1.0": {}
+      }
+    }
+  }
+}

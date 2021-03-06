@@ -55,7 +55,9 @@ namespace DemoImageKit
 
         private async void loadImageOnPage(byte[] image)
         {
+            imDisplay.Source = null;
             ImageSource imageSource = ImageSource.FromStream(() => { return new MemoryStream(image); });
+            //image = null;
             imDisplay.Source = imageSource;
             var imageInformation = await CrossImageData.Current.GetImageDetails(image);
             lbWidth.Text = "Width " + imageInformation.Width;

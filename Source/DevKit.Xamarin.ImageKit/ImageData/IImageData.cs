@@ -10,6 +10,6 @@ namespace DevKit.Xamarin.ImageKit
 		/// </summary>
 		/// <returns>The png image.</returns>
 		/// <param name="image">The original image.</param>
-        Task<ImageDataResult> GetImageDetails(byte[] image);
+        ImageDataResult GetImageDetails(byte[] image);
     }
 }

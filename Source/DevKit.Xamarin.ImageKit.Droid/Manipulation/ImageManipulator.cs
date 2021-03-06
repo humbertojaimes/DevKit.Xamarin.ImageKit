@@ -9,17 +9,17 @@ namespace DevKit.Xamarin.ImageKit.Manipulation
 {
     public class ImageManipulator : IImageManipulator
     {
-        public async Task<byte[]> RotateImageAsync(byte[] originalImage, SideOrientation orientation, Abstractions.ImageFormat imageFormat)
+        public byte[] RotateImage(byte[] originalImage, SideOrientation orientation, Abstractions.ImageFormat imageFormat)
         {
             byte[] resultRotatedImage = null;
-            Bitmap bitmap = await originalImage.ToBitmapAsync();
+            Bitmap bitmap = originalImage.ToBitmap();
 
             Matrix matrix = new Matrix();
             matrix.PostRotate(orientation == SideOrientation.RotateToRigth ? 90 : -90);
 
             Bitmap rotatedBitmap = Bitmap.CreateBitmap(bitmap, 0, 0, bitmap.Width, bitmap.Height, matrix, true);
-            resultRotatedImage = await rotatedBitmap.ToByteArrayAsync(imageFormat);
-
+            resultRotatedImage = rotatedBitmap.ToByteArray(imageFormat);
+            rotatedBitmap.Dispose();
             return resultRotatedImage;
         }
 

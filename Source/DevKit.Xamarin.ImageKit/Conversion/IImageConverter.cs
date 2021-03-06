@@ -9,13 +9,13 @@ namespace DevKit.Xamarin.ImageKit.Abstractions
         /// </summary>
         /// <returns>The png image.</returns>
         /// <param name="image">The original image.</param>
-        Task<byte[]> ConvertJpgToPngAsync(byte[] image);
+        byte[] ConvertJpgToPng(byte[] image);
 
         /// <summary>
         /// Converts the png image to jpg image.
         /// </summary>
         /// <returns>The jpg image.</returns>
         /// <param name="image">The original image.</param>
-        Task<byte[]> ConvertPngToJpgAsync(byte[] image, int quality);
+        byte[] ConvertPngToJpg(byte[] image, int quality);
     }
 }

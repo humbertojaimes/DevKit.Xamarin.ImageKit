@@ -14,7 +14,7 @@ namespace DevKit.Xamarin.ImageKit.Manipulation
         /// <param name="originalImage">Original image.</param>
         /// <param name="orientation">Left o Rigth rotation. </param>
         /// <param name="imageFormat">Image format Jpg or Png.</param>
-        Task<byte[]> RotateImageAsync(byte[] originalImage, SideOrientation orientation , ImageFormat imageFormat);
+        byte[] RotateImage(byte[] originalImage, SideOrientation orientation , ImageFormat imageFormat);
 
     }
 }

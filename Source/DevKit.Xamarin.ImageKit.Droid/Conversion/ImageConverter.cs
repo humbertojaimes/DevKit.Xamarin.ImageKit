@@ -12,11 +12,12 @@ namespace DevKit.Xamarin.ImageKit
         /// </summary>
         /// <returns>The png image.</returns>
         /// <param name="image">The original image.</param>
-        public async Task<byte[]> ConvertJpgToPngAsync(byte[] image)
+        public byte[] ConvertJpgToPng(byte[] image)
         {
             byte[] resultByteArray = null;
-            Bitmap bitmap = await image.ToBitmapAsync();
-            resultByteArray = await bitmap.ToByteArrayAsync(Abstractions.ImageFormat.PNG);
+            Bitmap bitmap = image.ToBitmap();
+            resultByteArray = bitmap.ToByteArray(Abstractions.ImageFormat.PNG);
+            bitmap.Dispose();
             return resultByteArray;
         }
 
@@ -25,11 +26,12 @@ namespace DevKit.Xamarin.ImageKit
         /// </summary>
         /// <returns>The jpg image.</returns>
         /// <param name="image">The original image.</param>
-        public async Task<byte[]> ConvertPngToJpgAsync(byte[] image, int quality)
+        public byte[] ConvertPngToJpg(byte[] image, int quality)
         {
             byte[] resultByteArray = null;
-            Bitmap bitmap = await image.ToBitmapAsync();
-            resultByteArray = await bitmap.ToByteArrayAsync(Abstractions.ImageFormat.JPG, quality);
+            Bitmap bitmap = image.ToBitmap();
+            resultByteArray = bitmap.ToByteArray(Abstractions.ImageFormat.JPG, quality);
+            bitmap.Dispose();
             return resultByteArray;
         }
     }

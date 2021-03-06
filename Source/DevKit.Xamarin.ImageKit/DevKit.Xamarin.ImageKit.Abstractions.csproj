@@ -8,8 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>DevKit.Xamarin.ImageKit</RootNamespace>
     <AssemblyName>DevKit.Xamarin.ImageKit.Abstractions</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,6 +42,9 @@
   <ItemGroup>
     <Folder Include="ImageData\" />
     <Folder Include="Manipulation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="project.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

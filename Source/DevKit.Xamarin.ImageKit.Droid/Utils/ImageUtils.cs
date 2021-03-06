@@ -6,15 +6,15 @@ namespace DevKit.Xamarin.ImageKit.Droid.Utils
 {
     public static class ImageUtils
     {
-        public async static Task<Bitmap> ToBitmapAsync(this byte[] image)
+        public static Bitmap ToBitmap(this byte[] image)
         {
             Bitmap resultBitmap =
                 BitmapFactory.DecodeByteArray(image, 0, image.Length);
-
+            
             return resultBitmap;
         }
 
-        public async static Task<byte[]> ToByteArrayAsync(this Bitmap image, Abstractions.ImageFormat format, int quality = 100)
+        public static byte[] ToByteArray(this Bitmap image, Abstractions.ImageFormat format, int quality = 100)
         {
             byte[] resultArray = null;
             using (MemoryStream outStream = new MemoryStream())
