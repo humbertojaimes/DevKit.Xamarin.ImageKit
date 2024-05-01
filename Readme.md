@@ -22,24 +22,24 @@ The ImageKit for Xamarin contains basic functionality to resize images and conve
 ### Functions
 
 - Conversion
-```
+```csharp
 //Convert Image from JPG to PNG
 byte[] pngImage = await CrossImageConverter.Current.ConvertJpgToPng(sampleImage);
 ```
 ```
 //Convert Image from PNG to JPG. It can receive the quality of the result image from 0 to 100
 byte[] newJpg = await CrossImageConverter.Current.ConvertPngToJpgAsync(png, 100);
-```
+```csharp
 - Resizing
-```
+```csharp
 //Convert Image from PNG to JPG. It can receive the quality of the result image from 0 to 100
 byte[] newJpg = await CrossImageConverter.Current.ConvertPngToJpgAsync(png, 100);
 ```
-```
+```csharp
 //Reduce de quelity of JP Image. Quality is a value from 0 to 100
 byte[] lessQualityImage = await CrossImageResizer.Current.ReduceJPGQualityAsync(sampleImage, 50);
 ```
-```
+```csharp
 //Resize an image with custom width and height
 byte[] reducedImage = await CrossImageResizer.Current.ResizeImageAsync(sampleImage, 320, 320, format);
 ```
@@ -49,13 +49,13 @@ byte[] scaledImage = await CrossImageResizer.Current.ScaleImageAsync(sampleImage
 ```
 
 - Manipulation
-```
+```csharp
 //Rotate an image 90 degrees to it's rigth or left side
 byte[] leftRotatedImage = await CrossImageManipulation.Current.RotateImageAsync(sampleImage, SideOrientation.RotateToLeft, format);
 ```
 
 - Image Details
-```
+```csharp
 //Returns the width and heigth of the image 
 var imageInformation = await CrossImageData.Current.GetImageDetails(image);
             lbWidth.Text = "Width " + imageInformation.Width;
